@@ -14,7 +14,6 @@ export class RecipeCard extends HTMLElement {
 
 		// A2. TODO - Create an <article> element - This will hold our markup once our data is set
 		this.article = document.createElement("article");
-		console.log(this.article);
 		// A3. TODO - Create a style element - This will hold all of the styles for the Web Component
 		const style = document.createElement("style");
 
@@ -125,7 +124,6 @@ export class RecipeCard extends HTMLElement {
 	set data(data) {
 		// If nothing was passed in, return
 		if (!data) return;
-
 		// A6. TODO - Select the <article> we added to the Shadow DOM in the constructor
 		const article = this.article;
 		// A7. TODO - Set the contents of the <article> with the <article> template given in
@@ -157,4 +155,4 @@ export class RecipeCard extends HTMLElement {
 
 // A8. TODO - Define the Class as a customElement so that you can create
 //           'recipe-card' elements
-customElements.define("recipe-card", RecipeCard);
+customElements.define("recipe-card", RecipeCard, {extends: "article"});
